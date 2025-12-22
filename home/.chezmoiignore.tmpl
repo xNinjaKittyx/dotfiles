@@ -2,3 +2,15 @@
 .oh-my-zsh/templates/**
 
 .config/secrets.env
+.config/nvm
+
+{{ if ne .chezmoi.os "darwin" }}
+.chezmoiscripts/darwin/**
+.config/aerospace
+.config/sketchybar
+{{ end }}
+
+{{ if ne .chezmoi.os "linux" }}
+.chezmoiscripts/linux/**
+{{ end }}
+

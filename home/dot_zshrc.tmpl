@@ -135,11 +135,11 @@ function showdockerlogs {
 {{ if eq .chezmoi.os "darwin" -}}
 export DOCKER_CLIENT_TIMEOUT=360
 export COMPOSE_HTTP_TIMEOUT=360
+export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=true
 export GPG_TTY=$(tty)
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-defaults write .GlobalPreferences com.apple.mouse.scaling -1
 {{- end }}
 {{- if .ephemeral }}
 # These environments usually are docker containers, and can't support FUSE appimages.
@@ -192,5 +192,7 @@ if [[ -d $HOME/.cargo ]]; then
     . "$HOME/.cargo/env"
 fi
 {{- end }}
+
+fastfetch
 
 eval "$(starship init zsh)"

@@ -16,19 +16,33 @@ fi
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 {{- end }}
 
-brew analytics off
+brew analytics off 
+brew tap FelixKratz/formulae
 {{ $brews := list
-     "bat"
-     "curl"
-     "eza"
-     "fd"
-     "ffmpeg"
-     "fzf"
-     "git"
-     "jq"
-     "ripgrep"
-     "tmux"
-     "wget"
-     "yt-dlp" -}}
+    "bat"
+    "borders"
+    "curl"
+    "eza"
+    "fastfetch"
+    "fd"
+    "ffmpeg"
+    "fzf"
+    "git"
+    "jq"
+    "lua"
+    "nowplaying-cli"
+    "ripgrep"
+    "sketchybar"
+    "switchaudio-osx"
+    "tmux"
+    "wget"
+    "yt-dlp" -}}
+
+{{ $casks := list
+    "nikitabobko/tap/aerospace"
+    "sf-symbols"
+    "font-sf-mono"
+    "font-sf-pro" -}}
 
 {{- end }}
+
