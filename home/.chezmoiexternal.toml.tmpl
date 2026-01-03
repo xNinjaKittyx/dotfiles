@@ -53,6 +53,7 @@
 
 {{- end }}
 
+{{- if ne .chezmoi.os "windows" }}
 [".tmux/plugins/tpm"]
     type = "git-repo"
     url = "https://github.com/tmux-plugins/tpm"
@@ -111,3 +112,5 @@
     exact = true
     refreshPeriod = "72h"
     stripComponents = 1
+
+{{- end }}
