@@ -1,6 +1,8 @@
+{{ if ne .chezmoi.os "windows" }}
 #!/bin/bash
 
 set -eufo pipefail
 
 mkdir -p "$HOME/.local/bin"
 curl -sS https://starship.rs/install.sh | sh -s -- --yes -b "$HOME/.local/bin"
+{{ end }}
