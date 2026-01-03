@@ -14,3 +14,15 @@
 .chezmoiscripts/linux/**
 {{ end }}
 
+{{ if ne .chezmoi.os "windows" }}
+.config/yasb
+.config/glzr
+{{ end }}
+
+{{ if eq .chezmoi.os "windows" }}
+.zshrc
+.config/ghostty
+.config/git
+.config/tmux
+{{ end }}
+
