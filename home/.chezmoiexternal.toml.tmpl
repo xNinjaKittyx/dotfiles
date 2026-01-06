@@ -114,3 +114,22 @@
     stripComponents = 1
 
 {{- end }}
+
+{{- if and (not .ephemeral) (not .headless) }}
+{{-   $fontDir := "" }}
+{{-   if eq .chezmoi.os "darwin" }}
+{{-     $fontDir = "Library/Fonts" }}
+{{-   else if eq .chezmoi.os "linux" }}
+{{-     $fontDir = ".local/share/fonts" }}
+{{-   end }}
+{{-   range (list
+        "JetBrainsMono-Regular.otf"
+        "JetBrainsMono-Medium.otf"
+        "JetBrainsMono-Bold.otf"
+        "JetBrainsMono-Italic.otf") }}
+["{{ $fontDir }}/{{ . }}"]
+    type = "file"
+    url = "https://github.com/JetBrains/JetBrainsMono/raw/refs/heads/master/fonts/otf/{{ . }}"
+    refreshPeriod = "168h"
+{{-   end }}
+{{- end }}
