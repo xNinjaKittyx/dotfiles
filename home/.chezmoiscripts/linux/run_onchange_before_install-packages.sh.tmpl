@@ -1,4 +1,4 @@
-{{ if and (eq .osid "linux-ubuntu" "linux-arch") (not .ephemeral) -}}
+{{ if and (eq .chezmoi.os "linux") (not .ephemeral) -}}
 
 {{ $packages := list
     "bat"
