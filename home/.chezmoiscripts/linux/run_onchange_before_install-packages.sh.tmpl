@@ -30,7 +30,7 @@ set -eufo pipefail
 {{ $sudo }}apt-get install -y {{ $packages | join " " }}
 {{ end -}}
 
-{{ if eq .osid "linux-arch" -}}
+{{ if eq .osid "linux-arch" "linux-endeavouros" -}}
 {{ $sudo }}pacman -Sy {{ $packages | join " " }}
 {{ end -}}
 
