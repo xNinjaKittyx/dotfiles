@@ -127,7 +127,7 @@
         "JetBrainsMonoNerdFontMono-Italic.ttf") }}
 ["{{ $fontDir }}/{{ . }}"]
     type = "archive"
-    url = {{ gitHubLatestReleaseAssetURL "ryanoasis/nerd-fonts" "JetBrainsMono.tar.xz " | quote }}
+    url = {{ gitHubLatestReleaseAssetURL "ryanoasis/nerd-fonts" "JetBrainsMono.tar.xz" | quote }}
     refreshPeriod = "168h"
     path = "{{ . }}"
 {{-   end }}
