@@ -12,6 +12,8 @@
 
 {{ if ne .chezmoi.os "linux" }}
 .chezmoiscripts/linux/**
+.config/waybar
+.config/hypr
 {{ end }}
 
 {{ if ne .chezmoi.os "windows" }}
