@@ -13,6 +13,7 @@
     "cpu",
     "memory",
     "custom/docker",
+    "custom/sway",
     "tray",
     "custom/lock",
     "custom/power"
@@ -84,7 +85,7 @@
 
   "custom/power": {
     "tooltip": false,
-    "on-click": "wlogout &",
+    "on-click": "${XDG_CONFIG_HOME}/hypr/scripts/wlogout.sh",
     "format": "⏻"
   },
 
@@ -102,5 +103,11 @@
     "interval": 1800,
     "exec": "${XDG_CONFIG_HOME}/waybar/scripts/weather-stats/weather-stats",
     "return-type": "json"
+  },
+  "custom/sway": {
+    "format": "{}",
+    "tooltip": false,
+    "exec": "swaync-client -t",
+    "return-type": "text"
   }
 }
