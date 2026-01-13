@@ -2,9 +2,7 @@
 
 {{ $packages := list
     "bat"
-    "fastfetch"
     "git"
-    "github-cli"
     "ripgrep"
     "tldr"
     "tmux"
@@ -16,6 +14,8 @@
 
 {{ if eq .osid "linux-arch" -}}
 {{   $packages = mustAppend $packages "fd" -}}
+{{   $packages = mustAppend $packages "github-cli" -}}
+{{   $packages = mustAppend $packages "fastfetch" -}}
 {{ end -}}
 
 {{ $sudo := "sudo " -}}
@@ -34,8 +34,8 @@ set -eufo pipefail
 
 {{ if or (eq .osid "linux-arch") (eq .osid "linux-endeavouros") -}}
 {{ $sudo }}pacman -Sy --needed {{ $packages | join " " }}
+systemctl --user enable --now hyprpolkitagent.service
 {{ end -}}
 
-systemctl --user enable --now hyprpolkitagent.service
 
 {{ end -}}
