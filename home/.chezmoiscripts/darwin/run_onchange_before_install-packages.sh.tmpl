@@ -16,7 +16,7 @@ fi
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 {{- end }}
 
-brew analytics off 
+brew analytics off
 brew tap FelixKratz/formulae
 {{ $brews := list
     "bat"
@@ -28,15 +28,20 @@ brew tap FelixKratz/formulae
     "ffmpeg"
     "fzf"
     "git"
+    "imagemagick"
     "jq"
     "lua"
     "nowplaying-cli"
+    "poppler"
+    "resvg"
     "ripgrep"
+    "sevenzip"
     "sketchybar"
     "switchaudio-osx"
-    "tmux"
     "wget"
-    "yt-dlp" -}}
+    "yazi"
+    "yt-dlp"
+    "zoxide" -}}
 
 {{ $casks := list
     "nikitabobko/tap/aerospace"

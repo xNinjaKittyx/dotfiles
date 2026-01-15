@@ -5,7 +5,7 @@
     "git"
     "ripgrep"
     "tldr"
-    "tmux"
+    "yazi"
     "zsh" -}}
 
 {{ if eq .osid "linux-ubuntu" -}}
@@ -34,7 +34,6 @@ set -eufo pipefail
 
 {{ if or (eq .osid "linux-arch") (eq .osid "linux-endeavouros") -}}
 {{ $sudo }}pacman -Sy --needed {{ $packages | join " " }}
-systemctl --user enable --now hyprpolkitagent.service
 {{ end -}}
 
 

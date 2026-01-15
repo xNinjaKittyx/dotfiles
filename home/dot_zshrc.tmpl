@@ -57,10 +57,23 @@ alias cat=batcat
 {{- if lookPath "fdfind" }}
 alias fd=fdfind
 {{- end }}
+{{- if lookPath "fcitx5" }}
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+{{- end }}
 
 alias top="WEBKIT_DISABLE_DMABUF_RENDERER=1 NeoHtop"
 alias waybar_reload="pkill -SIGUSR2 waybar"
 alias waybar_hide="pkill -SIGUSR1 waybar"
+
+# yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 
 
 {{ if stat (printf "%s/.local/bin/nvim" .chezmoi.homeDir) -}}

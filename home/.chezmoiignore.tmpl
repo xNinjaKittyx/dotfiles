@@ -12,9 +12,12 @@
 
 {{ if ne .chezmoi.os "linux" }}
 .chezmoiscripts/linux/**
-.config/wlogout
+.config/xdg-desktop-portal
+.config/wleave
 .config/waybar
 .config/hypr
+.config/swaync
+.local/
 {{ end }}
 
 {{ if ne .chezmoi.os "windows" }}

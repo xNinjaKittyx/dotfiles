@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
-{{ if eq .chezmoi.os "windows" -}}
+{{ if or (eq .chezmoi.os "windows") (eq .chezmoi.os "darwin") -}}
 
 config.default_prog = { "pwsh.exe", "-NoLogo"}
 config.window_decorations = "RESIZE"

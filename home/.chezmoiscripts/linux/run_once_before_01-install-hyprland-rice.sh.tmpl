@@ -2,6 +2,7 @@
 
 {{ $pacpack := list
     "dolphin"
+    "fcitx5"
     "hyprcursor"
     "hyprland"
     "hyprsunset"
@@ -46,6 +47,7 @@ set -eufo pipefail
 yay -Sy --needed {{ $yaypack | join " " }}
 
 elephant service enable
+systemctl --user enable --now hyprpolkitagent.service
 
 # Install SDDM Theme
 
