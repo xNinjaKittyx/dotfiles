@@ -6,4 +6,4 @@ killall -9 linux-wallpaperengine
 
 swaync &
 waybar &
-linux-wallpaperengine 3504312917 --screen-root DP-1 --silent &
+sleep 5 && linux-wallpaperengine 3504312917 --screen-root DP-1 --silent &
